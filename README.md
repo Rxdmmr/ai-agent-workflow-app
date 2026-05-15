@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a simple AI-powered workflow automation application built using Streamlit and OpenRouter LLM APIs.
+This project is a simple AI-powered workflow automation system built using Streamlit and OpenRouter LLM APIs.
 
 The application accepts business requests as input and processes them through multiple workflow stages including:
 
@@ -16,9 +16,13 @@ The application accepts business requests as input and processes them through mu
 
 - Recommended Next Action
 
+The system combines LLM-based natural language understanding with rule-based workflow automation.
+
+---
+
 ## Features
 
-- Streamlit-based UI
+- Streamlit-based user interface
 
 - LLM-powered request classification
 
@@ -26,11 +30,67 @@ The application accepts business requests as input and processes them through mu
 
 - Rule-based validation
 
-- Priority/risk assessment
+- Priority and risk assessment
 
-- Workflow trace display
+- Recommended workflow actions
+
+- Workflow trace visualization
 
 - Environment variable support for API security
+
+- Basic error handling
+
+---
+
+## Supported Request Types
+
+The application can process requests such as:
+
+- Refund Requests
+
+- Support Issues
+
+- Contract Review Requests
+
+- Invoice Queries
+
+- General Business Requests
+
+---
+
+## Workflow Architecture
+
+```text
+
+User Input
+
+   ↓
+
+Request Classification (LLM)
+
+   ↓
+
+Information Extraction (LLM)
+
+   ↓
+
+Validation
+
+   ↓
+
+Priority Assessment
+
+   ↓
+
+Recommended Action
+
+   ↓
+
+Workflow Result Display
+
+```
+
+---
 
 ## Tech Stack
 
@@ -42,7 +102,9 @@ The application accepts business requests as input and processes them through mu
 
 - GPT-3.5 Turbo
 
-- dotenv
+- python-dotenv
+
+---
 
 ## Setup Instructions
 
@@ -50,11 +112,13 @@ The application accepts business requests as input and processes them through mu
 
 ```bash
 
-git clone <your_repo_url>
+git clone [https://github.com/Rxdmmr/ai-agent-workflow-app.git](https://github.com/Rxdmmr/ai-agent-workflow-app.git)
 
-cd ai_workflow_app
+cd ai-agent-workflow-app
 
 ```
+
+---
 
 ### 2. Create Virtual Environment
 
@@ -66,6 +130,8 @@ source venv/bin/activate
 
 ```
 
+---
+
 ### 3. Install Dependencies
 
 ```bash
@@ -74,15 +140,19 @@ pip install -r requirements.txt
 
 ```
 
+---
+
 ### 4. Configure Environment Variables
 
-Create `.env` file:
+Create a `.env` file in the project root:
 
 ```env
 
 OPENROUTER_API_KEY=your_api_key_here
 
 ```
+
+---
 
 ### 5. Run Application
 
@@ -92,11 +162,13 @@ streamlit run [app.py](http://app.py)
 
 ```
 
+---
+
 ## Sample Workflow
 
 Input Request
 
-→ Classification
+→ Request Classification
 
 → Information Extraction
 
@@ -106,8 +178,35 @@ Input Request
 
 → Recommended Action
 
-## Notes
+→ Workflow Result Display
 
-- API keys are not committed to the repository.
+---
 
-- `.env.example` is included for reference.
+## Security Notes
+
+- API keys are not committed to the repository
+
+- `.env.example` is included for reference
+
+- Sensitive credentials are managed using environment variables
+
+---
+
+## Future Improvements
+
+Possible future enhancements include:
+
+- Database integration
+
+- Multi-user authentication
+
+- File upload support
+
+- Dashboard analytics
+
+- Advanced risk scoring
+
+- Workflow history tracking
+
+- Email notification integration
+
